@@ -1,0 +1,404 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+:root {
+    /* Base Colors */
+    --bg-light: #f5f5f5;
+    --bg-card: #ffffff;
+    
+    /* Brand Colors */
+    --primary-red: #ef5350;       /* Pokémon Red */
+    --secondary-blue: #42a5f5;    /* Pokémon Blue */
+    --accent-yellow: #ffeb3b;     /* Pikachu Yellow */
+    
+    /* Text Colors */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    
+    /* UI Elements */
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Optional for soft shadows */
+
+
+    /* Type */
+    --type-normal: #A8A77A;
+    --type-fire: #EE8130;
+    --type-water: #6390F0;
+    --type-electric: #F7D02C;
+    --type-grass: #7AC74C;
+    --type-ice: #96D9D6;
+    --type-fighting: #C22E28;
+    --type-poison: #A33EA1;
+    --type-ground: #E2BF65;
+    --type-flying: #A98FF3;
+    --type-psychic: #F95587;
+    --type-bug: #A6B91A;
+    --type-rock: #B6A136;
+    --type-ghost: #735797;
+    --type-dragon: #6F35FC;
+    --type-dark: #705746;
+    --type-steel: #B7B7CE;
+    --type-fairy: #D685AD;
+  }
+  
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--bg-light);
+}
+
+/* Header */
+.header{
+    background-color: var(--primary-red);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 1% 3%;
+}
+
+.header img{
+    width: 60px;
+    height: 60px;
+}
+
+.header .row{
+    width: 100%;
+}
+
+.header input{
+    width: 90%;
+    padding: 0.6rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: var(--text-primary);
+}
+
+.header .btn{
+    padding: 0.6rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: var(--secondary-blue);
+    color: #fff;
+    cursor: pointer;
+}
+
+.header select{
+    margin-top: 10px;
+    padding: 5px 15px;
+}
+
+.header select option{
+    color: white;
+    font-weight: 500;
+}
+
+/* Header */
+
+/* Content */
+.content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    align-content: center;
+    margin: 2% 15%;
+}
+
+.card{
+    background-color: var(--bg-card);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 10%;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.card img {
+    height: 160px; /* Fixed height */
+    width: auto;   /* Maintain aspect ratio */
+    object-fit: contain;
+}
+
+.card .name{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+span {
+    margin-right: 10px;
+    padding: 3px 20px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    color: white;
+}
+
+.detail-btn {
+    background-color: #d0ebff;
+    color: #003366;
+    padding: 4px 12px;
+    border-radius: 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: background-color 0.3s;
+    font-weight: 500;
+  }
+  
+.detail-btn:hover {
+    background-color: #b5dcf9;
+}
+  
+
+.load-more-btn{
+    align-self: center;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: #42a5f5;
+    border: none;
+    outline: none;
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+
+/* Content */
+
+/* Modal box */
+.stats {
+    margin-top: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+
+.stat-value {
+    width: 40px;
+    text-align: right;
+    color: black;
+    font-weight: 600;
+}
+
+
+.close-btn:hover {
+    color: black;
+}
+
+.info-row {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    margin-bottom: 4px;
+    color: black;
+}
+  
+.info-label {
+    width: 70px;
+    font-weight: bold;
+    color: black;
+}
+  
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+}
+  
+.stat-name {
+    width: 80px;
+    color: black;
+}
+  
+.stat-bar-container {
+    flex: 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 12px;
+}
+  
+.stat-bar {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.info-label-value{
+    color: black;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#modalBody{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+/* Make image inside modal responsive */
+.modal-content img {
+    max-width: 100%;   /* Ensure image doesn't overflow */
+    height: auto;      /* Maintain aspect ratio */
+    object-fit: contain;
+    align-self: center;
+}
+
+/* Adjust text inside modal */
+.modal-content p,
+.modal-content h1,
+.modal-content h2,
+.modal-content h3 {
+    font-size: 1.2em;  /* Default font size */
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+/* Modal box */
+  
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .content {
+        margin: 2% 10%;
+    }
+
+    .card img {
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin: 2% 5%;
+    }
+
+    .card img {
+        height: 100px;
+        width: auto;
+    }
+
+
+    .modal-content {
+        width: 90%;      /* Modal width on medium screens */
+        padding: 15px;   /* Adjust padding */
+    }
+
+    .modal-content img {
+        max-width: 90%;   /* Ensure image doesn't overflow */
+        height: auto;      /* Maintain aspect ratio */
+        object-fit: contain;
+        align-self: center;
+    }
+
+    .modal-content p,
+    .modal-content h1,
+    .modal-content h2,
+    .modal-content h3 {
+        font-size: 1em;  /* Adjust text size */
+    }
+
+    .header input {
+        width: 80%;
+    }
+
+    .header .btn {
+        padding: 0.5rem 0.8rem;
+    }
+
+    .card .name {
+        font-size: 1rem;
+    }
+
+    .load-more-btn {
+        padding: 8px 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header input {
+        width: 70%;
+    }
+
+    .modal-content{
+        width: 88%;
+    }
+
+    .modal-content img {
+        max-width: 50%;   /* Ensure image doesn't overflow */
+        height: auto;      /* Maintain aspect ratio */
+        object-fit: contain;
+        align-self: center;
+    }
+}
+/* Responsive Styles */
+
+
+.type-normal { background-color: var(--type-normal); }
+.type-fire { background-color: var(--type-fire); }
+.type-water { background-color: var(--type-water); }
+.type-electric { background-color: var(--type-electric); }
+.type-grass { background-color: var(--type-grass); }
+.type-ice { background-color: var(--type-ice); }
+.type-fighting { background-color: var(--type-fighting); }
+.type-poison { background-color: var(--type-poison); }
+.type-ground { background-color: var(--type-ground); }
+.type-flying { background-color: var(--type-flying); }
+.type-psychic { background-color: var(--type-psychic); }
+.type-bug { background-color: var(--type-bug); }
+.type-rock { background-color: var(--type-rock); }
+.type-ghost { background-color: var(--type-ghost); }
+.type-dragon { background-color: var(--type-dragon); }
+.type-dark { background-color: var(--type-dark); }
+.type-steel { background-color: var(--type-steel); }
+.type-fairy { background-color: var(--type-fairy); }
+
